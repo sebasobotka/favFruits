@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="favFruits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xsu-Pg-NsL">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="aiK-2c-L9t">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aiK-2c-L9t" id="sYu-Be-oDV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hov-yi-hRW"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5bT-TB-2cw"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-0V-R1Y">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="BEH-tD-9Zu"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="fruits" id="ibm-Yy-cVo">
+                                        <barButtonItem key="leftBarButtonItem" title="edit" id="6FH-QV-9lf">
+                                            <connections>
+                                                <action selector="editFruit:" destination="BYZ-38-t0r" id="cUc-Yt-VQM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="add" id="mDm-Cr-zWa">
+                                            <connections>
+                                                <action selector="addFruit:" destination="BYZ-38-t0r" id="Ycm-r9-bOu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xsu-Pg-NsL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4Xu-Sh-GVx"/>
+                            <constraint firstItem="xsu-Pg-NsL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WfA-e3-pRy"/>
+                            <constraint firstItem="hwu-0V-R1Y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="glf-16-Dq7"/>
+                            <constraint firstItem="xsu-Pg-NsL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nCY-HC-Pjw"/>
+                            <constraint firstItem="xsu-Pg-NsL" firstAttribute="top" secondItem="hwu-0V-R1Y" secondAttribute="bottom" id="ogr-k6-YyP"/>
+                            <constraint firstItem="hwu-0V-R1Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="syU-bq-pV3"/>
+                            <constraint firstItem="hwu-0V-R1Y" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tQh-79-8Hn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="addButLbl" destination="mDm-Cr-zWa" id="GtA-T0-v7x"/>
+                        <outlet property="editButLbl" destination="6FH-QV-9lf" id="RC1-NT-KXk"/>
+                        <outlet property="fruitsTable" destination="xsu-Pg-NsL" id="rrb-Vm-A7X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82.400000000000006" y="127.28635682158921"/>
+        </scene>
+    </scenes>
+</document>
